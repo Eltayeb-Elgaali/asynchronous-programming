@@ -1,6 +1,7 @@
 import { Post } from './post.js';
 
 export const choosePostHandler = (event) => {
+  debugger;
   const postId = event.target.form.postId.value;
 
   fetch('https://jsonplaceholder.typicode.com/posts/' + postId)

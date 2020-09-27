@@ -5,7 +5,7 @@ const log = labeledLogger('3. Write URL');
 const expect = chai.expect;
 
 const origin = window.location.origin;
-const path = _;
+const path = '/isolate/04-fetchs/fake-api/json-types.json';
 const requestURL = origin + path;
 log("requestURL: ", requestURL);
 
@@ -57,10 +57,10 @@ const separateAustralianTypes = (worms) => {
 
 
 fetch(requestURL)
-  .then(_)
-  .then(_)
-  .then(_)
-  .catch(_);
+  .then(parseResponse)
+  .then(separateAustralianTypes)
+  .then(testWormsTypes)
+  .catch(handleRejection);
 
 
 

@@ -5,7 +5,7 @@ const log = labeledLogger('2. Write URL');
 const expect = chai.expect;
 
 const origin = window.location.origin;
-const path = _;
+const path = '/isolate/04-fetchs/fake-api/json-types.json';
 const requestURL = origin + path;
 log("requestURL: ", requestURL);
 
@@ -37,10 +37,10 @@ const handleRejection = (err) => {
 
 // careful, these might not be right
 fetch(requestURL)
-  .then(parseResponse())
-  .then(separateBrazilNut())
-  .then(testNut())
-  .catch(handleRejection());
+  .then(parseResponse)
+  .then(separateBrazilNut)
+  .then(testNut)
+  .catch(handleRejection);
 
 
 
